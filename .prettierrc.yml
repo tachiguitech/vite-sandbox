@@ -1,0 +1,16 @@
+tabWidth: 2
+singleQuote: true
+trailingComma: none
+semi: true
+useTabs: false
+plugins:
+  - '@trivago/prettier-plugin-sort-imports'
+  - 'prettier-plugin-tailwindcss'
+pluginSearchDirs: false
+tailwindConfig: ./tailwind.config.js
+tailwindFunctions:
+  - 'twMerge'
+importOrder:
+  - '^react'
+  - "^@?\\w"
+  - '^[./]'
