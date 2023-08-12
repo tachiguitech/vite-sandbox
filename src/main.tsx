@@ -5,16 +5,19 @@ import './index.css';
 import Index from './pages';
 import Headlines from './pages/headlines';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Index />
-  },
-  {
-    path: '/headlines',
-    element: <Headlines />
-  }
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Index />
+    },
+    {
+      path: '/headlines',
+      element: <Headlines />
+    }
+  ],
+  { basename: import.meta.env.BASE_URL }
+);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
