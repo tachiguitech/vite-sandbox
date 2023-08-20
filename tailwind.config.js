@@ -9,8 +9,8 @@ export default {
         dsgn: ['"Dancing Script"', 'sans-serif']
       },
       colors: {
-        // base: "#f9f7f7",
-        base: '#e5cbd1',
+        'org-pink': '#e5cbd1',
+        'org-blue': '#6699a1',
         primary: '#331d2c'
       }
     }

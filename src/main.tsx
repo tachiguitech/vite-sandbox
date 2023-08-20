@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css';
 import Index from './pages';
+import Animations from './pages/animations';
 import Headlines from './pages/headlines';
 
 const router = createBrowserRouter(
@@ -14,6 +15,10 @@ const router = createBrowserRouter(
     {
       path: '/headlines',
       element: <Headlines />
+    },
+    {
+      path: '/animations',
+      element: <Animations />
     }
   ],
   { basename: import.meta.env.BASE_URL }
