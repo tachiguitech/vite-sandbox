@@ -124,7 +124,7 @@ const AnimationsPage: FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ amount: 'all' }}
-                transition={{ duration: 2.0 }}
+                transition={{ duration: 2.0, ease: 'easeInOut' }}
               >
                 <span className="border-2 border-slate-600 p-2 font-ss-en text-2xl font-bold">
                   InView
