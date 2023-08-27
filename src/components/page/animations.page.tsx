@@ -1,4 +1,5 @@
-import { type FC, useState, ReactNode } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   AnimatePresence,
@@ -8,13 +9,7 @@ import {
   useTransform
 } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-
-const Card: FC<{ children: ReactNode }> = ({ children }) => (
-  <div className="relative grid h-[12em] w-[24em] place-content-center place-items-center">
-    <div className="absolute h-full w-full rounded-lg bg-slate-100" />
-    <div className="absolute z-10">{children}</div>
-  </div>
-);
+import Card from '../ui/card';
 
 const AnimationsPage: FC = () => {
   const [visible, setVisible] = useState<boolean>(true);
