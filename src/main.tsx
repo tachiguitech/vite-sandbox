@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css';
 import Index from './pages';
 import Animations from './pages/animations';
+import Carousels from './pages/carousels';
 import Headlines from './pages/headlines';
 
 const router = createBrowserRouter(
@@ -19,6 +20,10 @@ const router = createBrowserRouter(
     {
       path: '/animations',
       element: <Animations />
+    },
+    {
+      path: '/carousels',
+      element: <Carousels />
     }
   ],
   { basename: import.meta.env.BASE_URL }

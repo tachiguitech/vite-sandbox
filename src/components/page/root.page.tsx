@@ -18,6 +18,12 @@ const RootPage: FC = () => (
         >
           Animations
         </Link>
+        <Link
+          className="text-blue-600 hover:text-blue-400 hover:underline hover:underline-offset-4"
+          to="/carousels"
+        >
+          Carousels
+        </Link>
       </div>
     </div>
   </div>
