@@ -16,6 +16,7 @@ const AnimationsPage: FC = () => {
   const dragValue = useMotionValue(0);
   const styleWithDrag = useTransform(dragValue, [-100, 100], ['#eee', '#111']);
   const [justifyStart, setJustifyStart] = useState<boolean>(true);
+  const [visibleList, setVisibleList] = useState<boolean>(true);
   const { scrollYProgress } = useScroll();
 
   return (
@@ -131,6 +132,75 @@ const AnimationsPage: FC = () => {
                 </span>
               </motion.div>
             </Card>
+            <div className="flex flex-col items-center gap-1">
+              <Card>
+                <AnimatePresence mode="wait">
+                  {visibleList && (
+                    <motion.div
+                      className="flex flex-col items-start gap-2 border-2 border-slate-600 px-12 py-2 font-ss-en"
+                      variants={{
+                        hidden: {
+                          opacity: 0.0,
+                          scale: 0.8
+                        },
+                        visible: {
+                          opacity: 1.0,
+                          scale: 1.0,
+                          transition: {
+                            duration: 0.4,
+                            when: 'beforeChildren',
+                            staggerChildren: 0.2
+                          }
+                        },
+                        exit: {
+                          opacity: 0.0,
+                          transition: {
+                            duration: 0.2,
+                            when: 'afterChildren'
+                          }
+                        }
+                      }}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                    >
+                      {[...Array(4)].map((_, index) => (
+                        <motion.div
+                          variants={{
+                            hidden: {
+                              opacity: 0.0,
+                              x: 20
+                            },
+                            visible: {
+                              opacity: 1.0,
+                              x: 0,
+                              transition: { duration: 0.8 }
+                            },
+                            exit: {
+                              opacity: 0.0,
+                              transition: {
+                                duration: 0.2
+                              }
+                            }
+                          }}
+                        >
+                          <span className="border-2 border-slate-600/30 px-2 text-2xl font-bold">
+                            Item {index}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Card>
+              <button
+                className="rounded-md bg-slate-700 px-4 py-2 font-ss-en text-lg text-slate-50 shadow-md hover:bg-slate-500 active:translate-y-0.5"
+                type="button"
+                onClick={() => setVisibleList(!visibleList)}
+              >
+                Change
+              </button>
+            </div>
           </main>
         </div>
         <div className="font-ss-en text-xl font-bold">
