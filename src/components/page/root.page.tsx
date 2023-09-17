@@ -24,6 +24,12 @@ const RootPage: FC = () => (
         >
           Carousels
         </Link>
+        <Link
+          className="text-blue-600 hover:text-blue-400 hover:underline hover:underline-offset-4"
+          to="/pik"
+        >
+          Pik
+        </Link>
       </div>
     </div>
   </div>

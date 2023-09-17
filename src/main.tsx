@@ -6,6 +6,7 @@ import Index from './pages';
 import Animations from './pages/animations';
 import Carousels from './pages/carousels';
 import Headlines from './pages/headlines';
+import Pik from './pages/pik';
 
 const router = createBrowserRouter(
   [
@@ -24,6 +25,10 @@ const router = createBrowserRouter(
     {
       path: '/carousels',
       element: <Carousels />
+    },
+    {
+      path: '/pik',
+      element: <Pik />
     }
   ],
   { basename: import.meta.env.BASE_URL }

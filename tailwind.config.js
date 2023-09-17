@@ -12,6 +12,10 @@ export default {
         'org-pink': '#e5cbd1',
         'org-blue': '#6699a1',
         primary: '#331d2c'
+      },
+      dropShadow: {
+        'org-orange': '0 0px 25px rgba(249, 115, 22, 0.75)',
+        'org-sky': '0 0px 5px rgba(14, 165, 233, 0.75)'
       }
     }
   },
