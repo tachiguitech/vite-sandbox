@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import AnimationsPage from '../components/page/animations.page';
 
 const Animations: FC = () => (
-  <div className="bg-org-blue py-16">
+  <div className="bg-slate-300 py-16">
     <AnimationsPage />
   </div>
 );

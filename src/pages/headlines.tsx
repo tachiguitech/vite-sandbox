@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import HeadlinesPage from '../components/page/headlines.page';
 
 const Headlines: FC = () => (
-  <div className="bg-org-pink py-16">
+  <div className="bg-slate-300 py-16">
     <HeadlinesPage />
   </div>
 );
