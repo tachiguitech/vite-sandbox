@@ -2,19 +2,19 @@ import type { FC, ReactNode } from 'react';
 import type { ClassNameValue } from 'tailwind-merge';
 import { twMerge } from 'tailwind-merge';
 
-interface Props {
+export interface CardProps {
   children: ReactNode;
   readonly wholeClassName?: ClassNameValue;
   readonly bgClassName?: ClassNameValue;
 }
 
-const Card: FC<Props> = ({
+const Card: FC<CardProps> = ({
   children,
   wholeClassName: wholeClass,
   bgClassName: bgClass
 }) => {
   const wholeClassNameMerged = twMerge(
-    'relative grid h-[12em] w-[24em] place-content-center place-items-center',
+    'relative grid h-full w-full place-content-center place-items-center',
     wholeClass
   );
   const bgClassNameMerged = twMerge(

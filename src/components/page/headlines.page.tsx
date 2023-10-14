@@ -1,7 +1,13 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
+import type { CardProps } from '../ui/card';
 import Card from '../ui/card';
+import Title from '../ui/title';
+
+const CommonCard: FC<CardProps> = ({ children }) => (
+  <Card wholeClassName="h-[12em] max-w-full">{children}</Card>
+);
 
 const HeadlinesPage: FC = () => {
   const text = 'なんかの情報';
@@ -12,17 +18,9 @@ const HeadlinesPage: FC = () => {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <div className="flex flex-row items-center gap-4 font-ss-en">
-        <Link
-          className="text-5xl text-blue-600 hover:text-blue-400 hover:underline"
-          to="/"
-        >
-          {'<'}
-        </Link>
-        <span className="text-3xl font-bold">Headlines.</span>
-      </div>
-      <main className="grid grid-cols-2 gap-x-4 gap-y-6">
-        <Card>
+      <Title label="Headlines." />
+      <main className="grid w-[80vw] grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] place-items-center gap-x-4 gap-y-6">
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -31,8 +29,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -42,8 +40,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -53,8 +51,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -64,8 +62,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-col items-center">
             <span
               className={twMerge(
@@ -78,8 +76,8 @@ const HeadlinesPage: FC = () => {
             </span>
             <span className={baseClassName}>{text}</span>
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-row items-center gap-3">
             <span
               className={twMerge(
@@ -92,8 +90,8 @@ const HeadlinesPage: FC = () => {
             </span>
             <span className={baseClassName}>{text}</span>
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-col items-start">
             <span
               className={twMerge(
@@ -106,8 +104,8 @@ const HeadlinesPage: FC = () => {
             </span>
             <span className={baseClassName}>{text}</span>
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-row items-end">
             <span
               className={twMerge(
@@ -120,8 +118,8 @@ const HeadlinesPage: FC = () => {
             </span>
             <span className={baseClassName}>{text}</span>
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -130,8 +128,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -140,8 +138,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <span
             className={twMerge(
               baseClassName,
@@ -150,8 +148,8 @@ const HeadlinesPage: FC = () => {
           >
             {text}
           </span>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div
             className={twMerge(
               'relative flex flex-row items-baseline gap-2',
@@ -168,8 +166,8 @@ const HeadlinesPage: FC = () => {
               {subtext}
             </span>
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-col items-center">
             <span
               className={twMerge(
@@ -188,8 +186,8 @@ const HeadlinesPage: FC = () => {
               )}
             />
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-col items-center">
             <span
               className={twMerge(
@@ -208,8 +206,8 @@ const HeadlinesPage: FC = () => {
               )}
             />
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-col items-start">
             <span
               className={twMerge(
@@ -228,8 +226,8 @@ const HeadlinesPage: FC = () => {
               )}
             />
           </div>
-        </Card>
-        <Card>
+        </CommonCard>
+        <CommonCard>
           <div className="flex flex-col items-end">
             <span
               className={twMerge(
@@ -241,7 +239,7 @@ const HeadlinesPage: FC = () => {
             </span>
             <span className={baseClassName}>{text}</span>
           </div>
-        </Card>
+        </CommonCard>
       </main>
       <div className="font-ss-en text-xl font-bold">
         <span>References:</span>

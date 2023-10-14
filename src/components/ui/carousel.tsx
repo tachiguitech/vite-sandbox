@@ -18,7 +18,7 @@ const Slide: FC<{
 }> = ({ children, className, opacity = 1.0 }) => (
   <motion.div
     className={twMerge(
-      'grid min-w-0 shrink-0 grow-0 basis-[100%] place-content-center place-items-center',
+      'grid w-full min-w-0 shrink-0 grow-0 basis-[100%] grid-cols-1 place-content-center place-items-center',
       className
     )}
     initial={{ opacity: 1.0 }}
@@ -35,7 +35,10 @@ const Carousel: FC<{
   readonly listClassName?: ClassNameValue;
   readonly itemClassName?: ClassNameValue;
 }> = ({ children, wholeClassName, listClassName, itemClassName }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'center',
+    containScroll: false
+  });
   const [snapIndex, setSnapIndex] = useState<number | undefined>(undefined);
   const onSelect = useCallback((api: EmblaCarouselType) => {
     const index = api.selectedScrollSnap();
@@ -49,7 +52,7 @@ const Carousel: FC<{
   return (
     <motion.div
       className={twMerge(
-        'h-[16em] w-[32em] overflow-hidden bg-slate-400',
+        'grid w-full grid-cols-1 place-content-center place-items-center overflow-hidden bg-slate-400',
         wholeClassName
       )}
       initial={{ opacity: 0.0 }}
@@ -60,12 +63,12 @@ const Carousel: FC<{
       }}
       ref={emblaRef}
     >
-      <div className={twMerge('flex h-full', listClassName)}>
+      <div className={twMerge('flex w-full', listClassName)}>
         {children.map((child, index) => (
           <Slide
             // eslint-disable-next-line react/no-array-index-key
             key={index}
-            className={twMerge(itemClassName)}
+            className={itemClassName}
             opacity={index === snapIndex ? 1.0 : 0.4}
           >
             {child}
